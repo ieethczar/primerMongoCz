@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .main.container
+    .row
+      .col-sm-4
+        form#log(method='POST',action='/bienvenido')
+          h3.text-center Iniciar Sesión
+          .form-group
+            label Usuario
+            input#txtUser.form-control(type='text',placeholder='Ingres tu usuario',name='user')
+          .form-group
+            label Password
+            input#txtPass.form-control(type='password',placeholder='Ingresa tu contraseña',name='password')
+          .form-group
+            button.btn.btn-info(type='submit') Ingresar
+          .form-group
+            .bg-error #{mensaje}
+          
+          if(!validado)
+            .text-center
+              a(href="./alta") Crear cuenta

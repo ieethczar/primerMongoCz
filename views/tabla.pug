@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    .main.contaier
+        .row
+            .col-md-6.col-md-offset-3
+                h1.display-4.m-b-2.text-center Datos de la tabla
+                table.table
+                    each val,index in datos
+                        tr
+                            td=val.nombre
+                            td=val.vendedor
+                            td=val.precio
