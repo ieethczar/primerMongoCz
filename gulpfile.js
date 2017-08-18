@@ -22,8 +22,8 @@ gulp.task('paramet',function(){
 
 gulp.task('crear',function(){
     var archivo = process.argv[4];
-    var contenidoPug = "extends layout";
-    var contenidoJs = "var express = require('express');";
+    var contenidoPug = "extends layout \nblock content";
+    var contenidoJs = "var express = require('express'); \nvar router = express.Router(); \n\n\nmodule.exports = router;";
 
     var appRutas = "var "+archivo+" = require('./routes/"+archivo+"');"
     var appVista = "app.use('/"+archivo+"',"+archivo+");";

@@ -1,0 +1,21 @@
+extends layout 
+block content
+    .main.container
+        .panel.panel-default
+            .panel-body(style='padding:40px;')
+                .row
+                    .col-md-6.col-md-offset-3
+                        h3.text-center Alta de usuario
+                        form(method='POST' action="/alta")
+                            .form-group
+                                label(for='txtNombreU')
+                                input#txtNombreU.form-control(type="text" name='txtNombreU' placeholder='Ingresa tu nombre completo')
+                            .form-group
+                                label(for='txtUsuarioU')
+                                input#txtUsuarioU.form-control(type="text" name='txtUsuarioU' placeholder='Ingresa un nombre de usuario')
+                            .form-group
+                                label(for='txtPasswordU')
+                                input#txtPasswordU.form-control(type="text" name='txtPasswordU' placeholder='Ingresa tu contraseña')
+                            .form-group
+                                button.btn.btn-info(type='submit') Crear mi cuenta ahora
+                            

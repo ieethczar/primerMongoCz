@@ -20,9 +20,9 @@ app.use(function(req,res,next){
 var index = require('./routes/index');
 var users = require('./routes/users');
 var borrar = require('./routes/borrar');
+var alta = require('./routes/alta');
 //hola-rutas
 
-var app = express();
 var tabla = require('./routes/tabla');
 var bienvenido = require('./routes/bienvenido');
 
@@ -44,6 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/borrar',borrar);
+app.use('/alta',alta);
 //hola-recurso
 app.use('/tabla', tabla);
 app.use('/bienvenido',bienvenido);
