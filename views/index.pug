@@ -16,3 +16,7 @@ block content
             button.btn.btn-info(type='submit') Ingresar
           .form-group
             .bg-error #{mensaje}
+          
+          if(!validado)
+            .text-center
+              a(href="./alta") Crear cuenta

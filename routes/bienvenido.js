@@ -5,7 +5,24 @@ var router = express.Router();
 router.post('/', function (req, res, next) {
     var db = req.db;
     var usuarios = db.get('usuarios');
-    usuarios.count({
+    
+    usuarios.find({
+        usuario:req.body.user,
+        password:req.body.password
+    }).then(function(docs){
+        if(Object.keys(docs).length>0){
+            res.render('bienvenido',{datos:docs});
+        }else{
+            res.render('index',{
+                mensaje:"Error!: Usuario no encontrado.",
+                validado:false
+            });
+        }
+    });
+    
+    
+    
+    /*usuarios.count({
         usuario: req.body.user,
         password: req.body.password
     }).then(function (cuenta) {
@@ -17,6 +34,6 @@ router.post('/', function (req, res, next) {
             });
         }
         db.close();
-    });
+    });*/
 }); 
 module.exports = router;
